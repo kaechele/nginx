@@ -670,7 +670,7 @@ ngx_ssl_cache_pkey_create(ngx_ssl_cache_key_t *id, char **err, void *data)
 
     if (id->type == NGX_SSL_CACHE_ENGINE) {
 
-#ifndef OPENSSL_NO_ENGINE
+#if !defined(OPENSSL_NO_ENGINE) && !defined(NGX_SSL_NO_ENGINE)
 
         u_char  *p, *last;
         ENGINE  *engine;

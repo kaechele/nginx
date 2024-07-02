@@ -45,6 +45,8 @@ USE_THREADS=NO
 
 NGX_FILE_AIO=NO
 
+NGX_SSL_NO_ENGINE=NO
+
 QUIC_BPF=NO
 
 HTTP=YES
@@ -373,6 +375,7 @@ use the \"--with-mail_ssl_module\" option instead"
 
         --with-openssl=*)                OPENSSL="$value"           ;;
         --with-openssl-opt=*)            OPENSSL_OPT="$value"       ;;
+        --without-engine)                NGX_SSL_NO_ENGINE=YES      ;;
 
         --with-md5=*)
             NGX_POST_CONF_MSG="$NGX_POST_CONF_MSG

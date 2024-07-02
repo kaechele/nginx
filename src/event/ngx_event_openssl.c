@@ -5935,7 +5935,7 @@ ngx_openssl_create_conf(ngx_cycle_t *cycle)
 static char *
 ngx_openssl_engine(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 {
-#ifndef OPENSSL_NO_ENGINE
+#if !defined(OPENSSL_NO_ENGINE) && !defined(NGX_SSL_NO_ENGINE)
 
     ngx_openssl_conf_t *oscf = conf;
 
@@ -5986,7 +5986,7 @@ ngx_openssl_exit(ngx_cycle_t *cycle)
 #if OPENSSL_VERSION_NUMBER < 0x10100003L
 
     EVP_cleanup();
-#ifndef OPENSSL_NO_ENGINE
+#if !defined(OPENSSL_NO_ENGINE) && !defined(NGX_SSL_NO_ENGINE)
     ENGINE_cleanup();
 #endif
 

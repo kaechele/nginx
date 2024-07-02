@@ -104,6 +104,10 @@ have=NGX_HTTP_UWSGI_TEMP_PATH value="\"$NGX_HTTP_UWSGI_TEMP_PATH\""
 have=NGX_HTTP_SCGI_TEMP_PATH value="\"$NGX_HTTP_SCGI_TEMP_PATH\""
 . auto/define
 
+if [ $NGX_SSL_NO_ENGINE = YES ]; then
+    have=NGX_SSL_NO_ENGINE . auto/have
+fi
+
 . auto/make
 . auto/lib/make
 . auto/install

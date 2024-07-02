@@ -20,7 +20,7 @@
 #include <openssl/conf.h>
 #include <openssl/crypto.h>
 #include <openssl/dh.h>
-#ifndef OPENSSL_NO_ENGINE
+#if !defined(OPENSSL_NO_ENGINE) && !defined(NGX_SSL_NO_ENGINE)
 #include <openssl/engine.h>
 #endif
 #include <openssl/evp.h>
