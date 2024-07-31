@@ -14,7 +14,7 @@ WriteMakefile(
     AUTHOR            => 'Igor Sysoev',
 
     CCFLAGS           => "$ENV{NGX_PM_CFLAGS}",
-    OPTIMIZE          => '-O',
+    OPTIMIZE          => '-O2',
 
     LDDLFLAGS         => "$ENV{NGX_PM_LDFLAGS}",
 
